@@ -1,4 +1,4 @@
-package bj.zzy.tree;
+package interview.tree;
 
 public class TreeNode {
     private final char val;

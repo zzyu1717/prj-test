@@ -1,6 +1,4 @@
-package bj.zzy.tree;
-
-import java.util.LinkedList;
+package interview.tree;
 
 public class BinaryTreeCreator {
     /**
