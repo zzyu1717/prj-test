@@ -1,4 +1,6 @@
-package interview.sort;
+package interview.sort.simple;
+
+import interview.sort.AbstractSort;
 
 public class SelectionSort extends AbstractSort {
 
@@ -14,7 +16,6 @@ public class SelectionSort extends AbstractSort {
                     minIndex = j;
                 }
             }
-
             int temp = arr[i];
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;

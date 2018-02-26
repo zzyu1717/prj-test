@@ -1,4 +1,6 @@
-package interview.sort;
+package interview.sort.simple;
+
+import interview.sort.AbstractSort;
 
 public class InsertionSort extends AbstractSort {
 

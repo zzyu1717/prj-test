@@ -1,4 +1,7 @@
-package interview.sort;
+package interview.sort.util;
+
+import interview.sort.AbstractSort;
+import interview.sort.Sort;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -21,6 +24,12 @@ public class SortUtil {
         return arr;
     }
 
+    public static int[] randomSortedArray(int n, int left, int right) {
+        int[] arr = randomArray(n,left,right);
+        Arrays.sort(arr);
+        return arr;
+    }
+
     /**
      * generate the array of elements sequence nealy sorted.
      * @param n
@@ -32,7 +41,7 @@ public class SortUtil {
     public static int[] nearlyLineArray(int n, int left, int right,int offset) {
         Random random = new Random();
         int[] arr = randomArray(n,left,right);
-        sort(arr);
+        Arrays.sort(arr);
         for (int i = 0; i < offset; i++) {
             // generate two random array index
             int randomIndex1 = random.nextInt(n);
@@ -45,7 +54,7 @@ public class SortUtil {
         return arr;
     }
 
-    public static void time(Sort sort,int[] arr) {
+    public static void time(Sort sort, int[] arr) {
         long startTime = System.currentTimeMillis();
         sort.sort(arr);
         System.out.println(((AbstractSort)sort).getSortName()+" elpased time: "
@@ -57,24 +66,13 @@ public class SortUtil {
         printArray(arr);
     }
 
-    public static void printArray(int[] arr) {
-        System.out.println(Arrays.toString(arr));
+    public static void testCorrectAndPrint(Sort sort,int[] arr) {
+        sort.sort(arr);
+        printArray(arr);
     }
 
-    public static void sort(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            int minIndex = i;
-            for (int j = i+1; j < arr.length; j++) {
-                if (arr[minIndex] > arr[j]) {
-                    minIndex = j;
-                }
-            }
-            if (minIndex != i) {
-                int tmep = arr[i];
-                arr[i] = arr[minIndex];
-                arr[minIndex] = tmep;
-            }
-        }
+    public static void printArray(int[] arr) {
+        System.out.println(Arrays.toString(arr));
     }
 
 }
