@@ -1,6 +1,7 @@
 package interview.sort.advance;
 
 import interview.sort.AbstractSort;
+import interview.sort.simple.InsertionSort;
 
 import java.util.Arrays;
 
@@ -18,13 +19,18 @@ public class MergeSort extends AbstractSort{
 
     //merger sort range in [left,right]
     private void mergeSort(int[] temp,int[] arr, int left, int right) {
-        if (left >= right) {
+        // for the little array, use insertSort sorting.
+        if (right - left <= 15) {
+            InsertionSort.sort(arr,left,right);
             return ;
         }
         int mid = left + (right-left)/2;
         mergeSort(temp,arr,left,mid);
         mergeSort(temp,arr,mid+1,right);
-        merge(temp,arr,left,mid,right);
+        // don't merge range within arr[mid] <= arr[mid+1] when the array is nearly order.
+        if (arr[mid] > arr[mid+1]) {
+            merge(temp,arr,left,mid,right);
+        }
     }
     //merge order sequence range within [left,mid] and [mid+1,right]
     private void merge(int[] temp,int[] arr, int left,int mid, int right) {

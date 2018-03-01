@@ -21,4 +21,32 @@ public class InsertionSort extends AbstractSort {
             arr[j] = min;
         }
     }
+
+    // sorting range within [l,r]
+    public static void sort(int[] arr, int l, int r) {
+        for (int i = l+1; i <= r; i++) {
+            int current = arr[i];
+            int j = i;
+            for (; j >= l+1 && current < arr[j-1]; j--) {
+                arr[j] = arr[j-1]; // max element shift to right
+            }
+            arr[j] = current;
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
