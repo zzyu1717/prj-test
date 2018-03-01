@@ -68,7 +68,8 @@ public class SortUtil {
     }
 
     public static void testCorrectAndPrint(Sort sort,int[] arr) {
-        sort.sort(arr);
+        boolean correct = isCorrect(sort,arr);
+        System.out.println(((AbstractSort)sort).getSortName()+" Test: " + correct);
         printArray(arr);
     }
 

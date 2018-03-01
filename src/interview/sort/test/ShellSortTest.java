@@ -1,29 +1,28 @@
 package interview.sort.test;
 
-import interview.sort.advance.MergeSort;
+import interview.sort.advance.ShellSort;
 import interview.sort.util.SortUtil;
 
-import java.util.Arrays;
-
-public class MergeSortTest {
+public class ShellSortTest {
     public static void main(String[] args) {
-        MergeSort mergeSort = new MergeSort("merge_sort");
+        int[] incres = {31,15,7,3,1};
+        ShellSort shellSort = new ShellSort("shell_sort",incres);
 
         int[] arr = {};
         int[] arr1 = {1};
         int[] arr2 = {2,1};
         int[] arr3 = {2,3,1};
-        mergeSort.sort(arr);
+        shellSort.sort(arr);
         SortUtil.printArray(arr);
-        mergeSort.sort(arr1);
+        shellSort.sort(arr1);
         SortUtil.printArray(arr1);
-        mergeSort.sort(arr2);
+        shellSort.sort(arr2);
         SortUtil.printArray(arr2);
-        mergeSort.sort(arr3);
+        shellSort.sort(arr3);
         SortUtil.printArray(arr3);
 
         int[] arr4 = SortUtil.randomArray(50,0,50);
-        boolean result = SortUtil.isCorrect(mergeSort,arr4);
+        boolean result = SortUtil.isCorrect(shellSort,arr4);
         System.out.println(result);
     }
 }

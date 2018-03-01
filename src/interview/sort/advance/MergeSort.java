@@ -28,27 +28,25 @@ public class MergeSort extends AbstractSort{
     }
     //merge order sequence range within [left,mid] and [mid+1,right]
     private void merge(int[] temp,int[] arr, int left,int mid, int right) {
+        // copy arr to temp within range [left,right].
+        System.arraycopy(arr,left,temp,left,right-left+1);
         // the index of left order sequence
         int i = left;
         // the index of right order sequence
         int j = mid + 1;
-        // the initial index of temporary array
-        int k = left;
         // the left and right part all exist.
         while (i <= mid && j <= right) {
-            if (arr[i] <= arr[j]) { // <= : is stable
-                temp[k++] = arr[i++];
+            if (temp[i] <= temp[j]) { // <= : is stable
+                arr[left++] = temp[i++];
             } else {
-                temp[k++] = arr[j++];
+                arr[left++] = temp[j++];
             }
         }
         while (i <= mid) { // the left have remainder
-            temp[k++] = arr[i++];
+            arr[left++] = temp[i++];
         }
         while (j <= right) { // the right have remainder
-            temp[k++] = arr[j++];
+            arr[left++] = temp[j++];
         }
-        // copy temp to arr.
-        System.arraycopy(temp,left,arr,left,right-left+1);
     }
 }

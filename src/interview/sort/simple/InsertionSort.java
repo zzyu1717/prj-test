@@ -15,7 +15,7 @@ public class InsertionSort extends AbstractSort {
             //sort [i,n)
             int min = arr[i];
             int j = i;
-            for (; j > 0 && min < arr[j-1]; j--) {
+            for (; j >= 1 && min < arr[j-1]; j--) {
                 arr[j] = arr[j-1];
             }
             arr[j] = min;
