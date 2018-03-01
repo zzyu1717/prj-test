@@ -64,7 +64,7 @@ public class SortUtil {
     public static void testTimeAndCorrect(Sort sort,int[] arr) {
         boolean correct = isCorrect(sort, arr);
         System.out.println(((AbstractSort)sort).getSortName()+" Test: " + correct);
-        time(sort,arr);gti
+        time(sort,arr);
     }
 
     public static void testCorrectAndPrint(Sort sort,int[] arr) {
