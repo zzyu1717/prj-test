@@ -2,13 +2,14 @@ package interview.sort.test;
 
 import interview.sort.advance.MergeSort;
 import interview.sort.advance.MergeSortB2U;
+import interview.sort.advance.MergeSortB2U2;
 import interview.sort.util.SortUtil;
 
 import java.util.Arrays;
 
 public class MergeSortB2UTest {
     public static void main(String[] args) {
-        MergeSortB2U mergeSort = new MergeSortB2U("merge_sort_b2u");
+        MergeSortB2U2 mergeSort = new MergeSortB2U2("merge_sort_b2u2");
 
         int[] arr = {};
         int[] arr1 = {1};
