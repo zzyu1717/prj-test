@@ -62,8 +62,9 @@ public class SortUtil {
     }
 
     public static void testTimeAndCorrect(Sort sort,int[] arr) {
-        time(sort,arr);
-        printArray(arr);
+        boolean correct = isCorrect(sort, arr);
+        System.out.println(((AbstractSort)sort).getSortName()+" Test: " + correct);
+        time(sort,arr);gti
     }
 
     public static void testCorrectAndPrint(Sort sort,int[] arr) {
@@ -73,6 +74,15 @@ public class SortUtil {
 
     public static void printArray(int[] arr) {
         System.out.println(Arrays.toString(arr));
+    }
+
+    public static boolean isCorrect(Sort sort, int[] arr) {
+        int[] copyArr = Arrays.copyOf(arr,arr.length);
+
+        sort.sort(arr);
+        Arrays.sort(copyArr);
+
+        return Arrays.equals(arr,copyArr);
     }
 
 }
