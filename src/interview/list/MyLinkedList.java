@@ -39,7 +39,6 @@ public class MyLinkedList {
     public void sort() {
         int n = size;
         // the length of sub-sequence from 1(inclusive) to n(exclusive).
-        Node lhead,rhead = head;
         for (int len = 1; len < n; len*=2) {
             // sorted [i,i+len-1] and [i+len,i+2*len-1]
             for (int i = 0; i < n-len; i+=2*len) {
@@ -57,32 +56,20 @@ public class MyLinkedList {
         Node rHead = getNode(j);
         while(i <= mid && j <= r) {
             if (lHead.getValue() > rHead.getValue()) {
-
+                swapValue(lHead,rHead);
+                rHead = rHead.getNext();
+            } else {
+                swapValue(lHead,rHead);
+                lHead = lHead.getNext();
             }
         }
-
+    }
+    public void swapValue(Node node1,Node node2) {
+        int temp = node1.getValue();
+        node1.setValue(node2.getValue());
+        node2.setValue(temp);
     }
 
-    private void swap(Node node1,Node node2) {
-        Node pre1 = getPre(node1);
-        Node next1 = node1.getNext();
-        Node pre2 = getPre(node2);
-        Node next2 = node2.getNext();
-
-        if (pre1 != null && pre2 != null) {
-            pre1.setNext(node2);
-            node2.setNext(next1);
-        } else if () { // node1 is head.
-            Node temp = node1;
-            node1.setNext(next2);
-            node2
-        }
-
-        if (pre2 != null) {
-            pre2.setNext(node1);
-            node1.setNext(next2);
-        }
-    }
 
     /**
      * get the node by index. return null if not exist
@@ -97,7 +84,7 @@ public class MyLinkedList {
         return curr;
     }
 
-    private Node getPre(Node node) {
+    public Node getPre(Node node) {
         if (node == null) {
             return null;
         }

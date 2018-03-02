@@ -1,7 +1,7 @@
 package interview.list;
 
 public class Node {
-    private final int value;
+    private  int value;
     private Node next;
 
     public Node(int value) {
@@ -10,6 +10,10 @@ public class Node {
 
     public int getValue() {
         return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public Node getNext() {
