@@ -53,12 +53,9 @@ public class QuickSort3Ways extends AbstractSort {
         int gt = r+1; // gt is first element great than v.
         while (i < gt) {
             if (arr[i] < v) {
-                SortUtil.swap(arr,i,lt);
-                i++;
-                lt++;
+                SortUtil.swap(arr,i++,lt++);
             } else if (arr[i] > v) {
-                SortUtil.swap(arr,i,gt-1); // one element before > v
-                gt--;
+                SortUtil.swap(arr,i,--gt); // one element before > v
             } else {
                 i++;
             }
