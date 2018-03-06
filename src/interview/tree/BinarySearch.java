@@ -75,7 +75,6 @@ public class BinarySearch {
                 l = mid;
             }
         }
-
         if (l + 1 < arr.length && arr[l + 1] == target) {
             return l + 1;
         }
