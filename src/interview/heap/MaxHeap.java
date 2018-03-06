@@ -4,13 +4,27 @@ import interview.sort.util.SortUtil;
 
 public class MaxHeap {
     private int capacity;
-    private  int count;
+    private int count;
     private int[] items;
 
     public MaxHeap(int capacity) {
         this.capacity = capacity;
         this.count = 0;
         this.items = new int[capacity+1]; // max heap start form index 1.
+    }
+
+    public MaxHeap(int[] arr) {
+        items = new int[arr.length+1];
+        for (int i = 0; i < arr.length; i++) {
+            items[i+1] = arr[i];
+        }
+        count = arr.length;
+        capacity = arr.length;
+
+        for (int i = count/2; i >= 2; i--) {
+            shiftDown(i);
+        }
+
     }
 
     public void insert(int item) {
