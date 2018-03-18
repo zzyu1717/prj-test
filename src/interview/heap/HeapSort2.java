@@ -14,18 +14,17 @@ public class HeapSort2 extends AbstractSort {
     @Override
     public void sort(int[] arr) {
         int n = arr.length;
-        for (int i = (n-1)/2; i >= 2 ; i--) {
-            shiftDown(arr,i);
+        for (int i = (n-1-1)/2; i >= 0 ; i--) {
+            shiftDown(arr,i,n);
         }
 
         for (int i = n-1; i >= 0 ; i--) {
             SortUtil.swap(arr,i,0);
-            shiftDown(arr,0);
+            shiftDown(arr,0,i);
         }
     }
 
-    private void shiftDown(int[] arr,int i) {
-        int n = arr.length;
+    private void shiftDown(int[] arr,int i,int n) {
         int item = arr[i];
         while (2*i+1 < n ) {
             int j = 2*i+1;

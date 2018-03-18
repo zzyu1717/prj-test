@@ -8,18 +8,18 @@ import java.util.Arrays;
 public class HeapSortTest {
 
     public static void main(String[] args) {
-        HeapSort heapSort = new HeapSort("heap_sort");
-        HeapSort heapSort2 = new HeapSort("heap_sort2");
-        int n = 1000000, left = 0, right = n;
+        //HeapSort heapSort = new HeapSort("heap_sort");
+        HeapSort2 heapSort2 = new HeapSort2("heap_sort2");
+        int n = 10, left = 0, right = n;
         int[] arr = SortUtil.randomArray(n, left, right);
         int[] copyArr = Arrays.copyOf(arr,n);
 
 //        boolean correct = SortUtil.isCorrect(heapSort, arr);
 //        System.out.println(correct);
 
-
-        SortUtil.testTimeAndCorrect(heapSort,arr);
-        SortUtil.testTimeAndCorrect(heapSort2,copyArr);
+        System.out.println(Arrays.toString(copyArr));
+       // SortUtil.testTimeAndCorrect(heapSort,arr);
+        SortUtil.testCorrectAndPrint(heapSort2,copyArr);
 
     }
 }
