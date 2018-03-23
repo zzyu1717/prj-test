@@ -42,10 +42,10 @@ public class QuickSort2 extends AbstractSort {
         int j = r;
 
         while(true) {
-            while(i <= r && arr[i] < v) i++; // shift to left
-            while(j >= l+1 && arr[j] > v) j--; // shift to right
+            while(i <= r && arr[i] < v) i++; // shift to right
+            while(j >= l+1 && arr[j] > v) j--; // shift to left
             if (i > j) break;
-            SortUtil.swap(arr,i++,j--);
+            SortUtil.swap(arr,i++,j--); // arr[i] == arr[j] == v.
         }
         SortUtil.swap(arr,l,j);
         return j;

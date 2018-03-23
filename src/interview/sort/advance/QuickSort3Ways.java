@@ -44,7 +44,7 @@ public class QuickSort3Ways extends AbstractSort {
          *
          * l l+1       lt      i   gt       r
          *  +++++++++++++++++++++++++++++++++
-         *  |   < v   |  == v | ... |  > v  |
+         * p|   < v   |  == v | ... |  > v  |
          *  ++++++++++++++++++++++++++++++++
          *
          */

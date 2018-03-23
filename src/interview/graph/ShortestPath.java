@@ -87,5 +87,8 @@ public class ShortestPath {
         }
     }
 
+    public int length(int w) {
+        return ord[w];
+    }
 
 }
