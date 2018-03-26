@@ -38,5 +38,5 @@ public class SparseWeightGraph<Weight extends Number & Comparable> implements We
         return null;
     }
 
-    private List<Edge<Weight>>
+
 }
